@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 640" width="1400" height="640" role="img" aria-labelledby="pf-t">
+<title id="pf-t">Pontifex — KSKD migration flow, Igra to Robinhood</title>
+<style>
+.pf-root{font-family:"Public Sans","Segoe UI",system-ui,sans-serif;fill:#182029}
+.pf-mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.94em}
+.pf-h1{font-family:"Newsreader",Georgia,serif;font-size:30px;font-weight:600}
+.pf-h1sub{font-size:17px;fill:#5b6775}
+.pf-tag{font-size:14px;fill:#5b6775}
+.pf-lane{stroke:none}.pf-lane-igra{fill:#eef0fb}.pf-lane-off{fill:#f0f2f5}.pf-lane-rh{fill:#e9f5ee}
+.pf-lane-label{font-size:11px;font-weight:700;letter-spacing:.09em}
+.pf-lane-label-igra{fill:#4c5fd5}.pf-lane-label-off{fill:#5b6775}.pf-lane-label-rh{fill:#1f8a5b}
+.pf-box{fill:#ffffff;stroke:#182029;stroke-width:1.2}.pf-box-wallet{fill:#fff6dc}.pf-box-machine{stroke-dasharray:5 4}
+.pf-title{font-size:16px;font-weight:600}.pf-title-s{font-size:14.5px;font-weight:600}
+.pf-sub{font-size:12px;fill:#5b6775}
+.pf-flow{stroke:#182029;stroke-width:1.5;fill:none}.pf-flow-dashed{stroke-dasharray:5 4}
+.pf-link{stroke:#5b6775;stroke-width:1.2;stroke-dasharray:4 4}
+.pf-head{fill:#182029}
+.pf-badge{fill:#ffffff;stroke:#182029;stroke-width:1.2}.pf-badge-n{font-size:12px;font-weight:700}
+.pf-note{font-size:12px;fill:#5b6775}
+.pf-legend{font-size:13.5px}.pf-legend-n{font-size:13.5px;font-weight:700}
+</style>
+<defs><marker id="pf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="pf-head" d="M0 0 L10 5 L0 10 z"/></marker></defs>
+<g class="pf-root">
+<text class="pf-h1" x="40" y="52" text-anchor="start">Pontifex</text>
+<text class="pf-h1sub" x="168" y="52" text-anchor="start">KSKD migration, Igra → Robinhood</text>
+<text class="pf-tag" x="40" y="84" text-anchor="start">Burn on Igra, mint on Robinhood, 1:1, instant after finality. No reserve, no fees, no bridge-back, closable once.</text>
+<rect class="pf-lane pf-lane-igra" x="40" y="100" width="390" height="380" rx="16"/>
+<text class="pf-lane-label pf-lane-label-igra" x="56" y="126" text-anchor="start">IGRA · CHAIN 38833</text>
+<text class="pf-note" x="56" y="430" text-anchor="start">Igra Safe is the CLOSER: close() ends the exit for good.</text>
+<text class="pf-note" x="56" y="445" text-anchor="start">Recipient must be a wallet you control on Robinhood;</text>
+<text class="pf-note" x="56" y="460" text-anchor="start">a wrong recipient is lost.</text>
+<rect class="pf-lane pf-lane-off" x="450" y="100" width="310" height="380" rx="16"/>
+<text class="pf-lane-label pf-lane-label-off" x="466" y="126" text-anchor="start">OFF-CHAIN · RUN BY US</text>
+<text class="pf-note" x="466" y="445" text-anchor="start">Relayer: ours, free for users.</text>
+<text class="pf-note" x="466" y="460" text-anchor="start">One enclave signer (threshold 1).</text>
+<rect class="pf-lane pf-lane-rh" x="780" y="100" width="580" height="380" rx="16"/>
+<text class="pf-lane-label pf-lane-label-rh" x="796" y="126" text-anchor="start">ROBINHOOD · CHAIN 4663</text>
+<text class="pf-note" x="796" y="430" text-anchor="start">Robinhood Safe owns both contracts: admits signers, sets expectedPcr0,</text>
+<text class="pf-note" x="796" y="445" text-anchor="start">mintLimit (25M KSKD/day) and setBridge — the hard stop.</text>
+<text class="pf-note" x="796" y="460" text-anchor="start">Guardian (watchdog bot) can only pause: mintLimit → 0; the Safe restores it.</text>
+<rect class="pf-box pf-box-wallet" x="56" y="190" width="136" height="90" rx="10"/>
+<text class="pf-title" x="124" y="217" text-anchor="middle">Holder</text>
+<text class="pf-sub" x="124" y="238" text-anchor="middle">KSKD on Igra</text>
+<rect class="pf-box pf-box-contract" x="260" y="190" width="156" height="90" rx="10"/>
+<text class="pf-title" x="338" y="217" text-anchor="middle">KskdExit</text>
+<text class="pf-sub" x="338" y="238" text-anchor="middle">burns KSKD,</text>
+<text class="pf-sub" x="338" y="253" text-anchor="middle">keeps burned[recipient]</text>
+<rect class="pf-box pf-box-machine" x="480" y="190" width="200" height="90" rx="10"/>
+<text class="pf-title" x="580" y="217" text-anchor="middle">Enclave · AWS Nitro</text>
+<text class="pf-sub" x="580" y="238" text-anchor="middle">reads the ledger at finality,</text>
+<text class="pf-sub" x="580" y="253" text-anchor="middle">signs claims</text>
+<rect class="pf-box pf-box-contract" x="800" y="190" width="150" height="90" rx="10"/>
+<text class="pf-title" x="875" y="217" text-anchor="middle">KskdEntry</text>
+<text class="pf-sub" x="875" y="238" text-anchor="middle">checks signatures</text>
+<text class="pf-sub" x="875" y="253" text-anchor="middle">and the daily limit</text>
+<rect class="pf-box pf-box-contract" x="1010" y="190" width="160" height="90" rx="10"/>
+<text class="pf-title" x="1090" y="217" text-anchor="middle">KskdBridged</text>
+<text class="pf-sub" x="1090" y="238" text-anchor="middle">KSKD on Robinhood,</text>
+<text class="pf-sub" x="1090" y="253" text-anchor="middle">minted only by the entry</text>
+<rect class="pf-box pf-box-wallet" x="1208" y="190" width="136" height="90" rx="10"/>
+<text class="pf-title" x="1276" y="217" text-anchor="middle">Recipient</text>
+<text class="pf-sub" x="1276" y="238" text-anchor="middle">wallet on Robinhood</text>
+<rect class="pf-box pf-box-contract" x="800" y="330" width="220" height="74" rx="10"/>
+<text class="pf-title-s" x="910" y="357" text-anchor="middle">NitroAttestationVerifierV2</text>
+<text class="pf-sub" x="910" y="378" text-anchor="middle">proves the Nitro document;</text>
+<text class="pf-sub" x="910" y="393" text-anchor="middle">pins no PCR</text>
+<line class="pf-flow" x1="193" y1="235" x2="258" y2="235" marker-end="url(#pf-arrow)"/>
+<circle class="pf-badge" cx="225.5" cy="235" r="12"/>
+<text class="pf-badge-n" x="225.5" y="239.3" text-anchor="middle">1</text>
+<line class="pf-flow pf-flow-dashed" x1="417" y1="235" x2="478" y2="235" marker-end="url(#pf-arrow)"/>
+<circle class="pf-badge" cx="447.5" cy="235" r="12"/>
+<text class="pf-badge-n" x="447.5" y="239.3" text-anchor="middle">2</text>
+<line class="pf-flow" x1="681" y1="235" x2="798" y2="235" marker-end="url(#pf-arrow)"/>
+<circle class="pf-badge" cx="739.5" cy="235" r="12"/>
+<text class="pf-badge-n" x="739.5" y="239.3" text-anchor="middle">3</text>
+<line class="pf-flow" x1="951" y1="235" x2="1008" y2="235" marker-end="url(#pf-arrow)"/>
+<circle class="pf-badge" cx="979.5" cy="235" r="12"/>
+<text class="pf-badge-n" x="979.5" y="239.3" text-anchor="middle">4</text>
+<line class="pf-flow" x1="1171" y1="235" x2="1206" y2="235" marker-end="url(#pf-arrow)"/>
+<circle class="pf-badge" cx="1188.5" cy="235" r="12"/>
+<text class="pf-badge-n" x="1188.5" y="239.3" text-anchor="middle">5</text>
+<line class="pf-link" x1="840" y1="281" x2="840" y2="329"/>
+<circle class="pf-badge" cx="840" cy="305" r="12"/>
+<text class="pf-badge-n" x="840" y="309.3" text-anchor="middle">0</text>
+<text class="pf-legend-n" x="40" y="520" text-anchor="start">0</text>
+<text class="pf-legend" x="62" y="520">Before any claim: each enclave is admitted once by Nitro attestation (<tspan class="pf-mono">registerEnclave</tspan>) — the verifier proves the document, the entry pins PCR0. <tspan class="pf-mono">removeSigner</tspan> revokes a key.</text>
+<text class="pf-legend-n" x="40" y="541" text-anchor="start">1</text>
+<text class="pf-legend" x="62" y="541">The holder calls <tspan class="pf-mono">exit(amount, recipient)</tspan> on Igra — the KSKD is burned and <tspan class="pf-mono">burned[recipient]</tspan> grows (<tspan class="pf-mono">exitWithPermit</tspan> does it in one transaction, no prior approve).</text>
+<text class="pf-legend-n" x="40" y="562" text-anchor="start">2</text>
+<text class="pf-legend" x="62" y="562">The enclave reads <tspan class="pf-mono">burned[recipient]</tspan> at Igra&#x27;s <tspan class="pf-mono">finalized</tspan> tag (latest − 768 blocks, ≈ 13 min) — never from a fresher block.</text>
+<text class="pf-legend-n" x="40" y="583" text-anchor="start">3</text>
+<text class="pf-legend" x="62" y="583">It signs <tspan class="pf-mono">Claim(recipient, cumulativeBurned, deadline)</tspan> — EIP-712, deadline ≈ 1 h. Our relayer submits <tspan class="pf-mono">claim(…)</tspan> on Robinhood and pays the gas.</text>
+<text class="pf-legend-n" x="40" y="604" text-anchor="start">4</text>
+<text class="pf-legend" x="62" y="604">KskdEntry checks ≥ threshold signatures from admitted enclaves and the 25M KSKD/day window, then mints only what is missing: <tspan class="pf-mono">cumulativeBurned − bridgedIn[recipient]</tspan>.</text>
+<text class="pf-legend-n" x="40" y="625" text-anchor="start">5</text>
+<text class="pf-legend" x="62" y="625">KskdBridged credits the recipient. Robinhood supply is exactly what was burned on Igra — no reserve, no burn on Robinhood, no way back.</text>
+</g></svg>

@@ -1,0 +1,16 @@
+cache/
+out/
+broadcast/
+.env
+
+ops/node_modules/
+ops/dist/
+ops/state/
+ops/keys/
+ops/*.sqlite*
+ops/*.key
+ops/.env*
+ops/**/__pycache__/
+
+# Local operator scratch — never committed.
+scratchpad/

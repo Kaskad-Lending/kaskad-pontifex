@@ -1,0 +1,73 @@
+{
+  "source": {
+    "commit": "2284bd883370f9f4573eb780d4fc5e2dcf5b75ed",
+    "compiler": "solc 0.8.30, optimizer 200 runs, evm cancun, via_ir false",
+    "creationCodeCheck": "each deploy transaction's input = this commit's forge creation bytecode + the constructor arguments below"
+  },
+  "igra": {
+    "chainId": 38833,
+    "kskd": "0x16d92794F5B81d2CdEd0F0958779A410401e6435",
+    "KskdExit": {
+      "address": "0x5A818D42cA142483f72AE7D426E199324FEc4871",
+      "tx": "0x7a948c8a13517da11f8937f4eade6ed37b06a74370cbd6187f5f8ef539f50f32",
+      "block": 18880615,
+      "timestamp": 1791612271,
+      "deployer": "0x047b9729d53d6b6c7Df82B032EE4FCDD37Bb146f",
+      "gasUsed": 507288,
+      "constructor": {
+        "kskd": "0x16d92794F5B81d2CdEd0F0958779A410401e6435",
+        "closer": "0x5B95Ea5D5B63998467eE92B0b175ACE49ccC1943",
+        "minBurn": "115792089237316195423570985008687907853269984665640564039457584007913129639935"
+      }
+    },
+    "safe": {
+      "address": "0x5B95Ea5D5B63998467eE92B0b175ACE49ccC1943",
+      "version": "SafeL2 1.5.0",
+      "threshold": 3,
+      "owners": 5,
+      "multiSendCallOnly": "0xA83c336B20401Af773B6219BA5027174338D1836"
+    }
+  },
+  "robinhood": {
+    "chainId": 4663,
+    "KskdBridged": {
+      "address": "0x6ddb8541Af17DAdEA47dF41D1C13faf8Deee1902",
+      "tx": "0xa309ae9d8aeb0ba1dbd068141081f69bfc433c48cd973cd759fa4bb8483dc43f",
+      "block": 84780073,
+      "timestamp": 1791612879,
+      "deployer": "0x2DA5224C284B210D1E217c3AcEa8d93B7b7FE5e6",
+      "gasUsed": 1212891,
+      "constructor": {
+        "bridge": "0x7b1D080d2485E63791468d73418e2B262c25C402",
+        "owner": "0x313807B857222278FbddF36541DE2Af5a50BdCB5"
+      }
+    },
+    "KskdEntry": {
+      "address": "0x7b1D080d2485E63791468d73418e2B262c25C402",
+      "tx": "0xaaa322c8aac5edc7cd74e4b169619363745dfc39da51ee3f3f87f33d4ed61adb",
+      "block": 84780080,
+      "timestamp": 1791612880,
+      "deployer": "0x2DA5224C284B210D1E217c3AcEa8d93B7b7FE5e6",
+      "gasUsed": 1384226,
+      "constructor": {
+        "token": "0x6ddb8541Af17DAdEA47dF41D1C13faf8Deee1902",
+        "verifier": "0x52A22A678Af63d74BBfCB4c8fA90299db2760ACD",
+        "expectedPcr0": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "threshold": 1,
+        "mintLimit": "25000000000000000000000000",
+        "owner": "0x313807B857222278FbddF36541DE2Af5a50BdCB5"
+      }
+    },
+    "verifier": {
+      "address": "0x52A22A678Af63d74BBfCB4c8fA90299db2760ACD",
+      "kind": "NitroAttestationVerifierV2, pins no PCR"
+    },
+    "safe": {
+      "address": "0x313807B857222278FbddF36541DE2Af5a50BdCB5",
+      "version": "SafeL2 1.4.1",
+      "threshold": 3,
+      "owners": 5,
+      "multiSendCallOnly": "0x9641d764fc13c8B624c04430C7356C1C7C8102e2"
+    }
+  }
+}
